@@ -1,7 +1,7 @@
 node{
     def mavenHome= tool name: "maven", type: "maven"
     stage('Git Clone'){
-        git url: 'https://github.com/prasadchallagondla/maven-app.git'
+        git url: 'https://github.com/Subbu44/maven-app.git'
     }
     stage('Build'){
         sh "${mavenHome}/bin/mvn clean package"
