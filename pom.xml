@@ -94,11 +94,11 @@
 	      <name>Mithun Technologies Releases Nexus Repository</name>
 	      <url>http://34.93.37.14:8081/#admin/repository/repositories:nexus-artifact-repo</url>
 	    </repository>
-	    <snapshotRepository>
+	   <!-- <snapshotRepository>
 	      <id>nexus</id>
 	      <name>Mithun Technologies Snapshot Nexus Repository </name>
 	      <url>http://34.93.37.14:8081/#admin/repository/repositories:nexus-artifact-repo1</url>
-	    </snapshotRepository>
+	    </snapshotRepository>-->
 	</distributionManagement>
 	
 	<build>
