@@ -92,7 +92,7 @@
 	    <repository>
 	      <id>nexus</id>
 	      <name>Mithun Technologies Releases Nexus Repository</name>
-	      <url>http://34.125.3.95:8081/#admin/repository/repositories:Sprint3-Assignment/</url>
+	      <url>http://34.93.243.98:8081/#admin/repository/repositories:nexus-artifact-repo/</url>
 	    </repository>
 	    <snapshotRepository>
 	      <id>nexus</id>
