@@ -1,16 +1,15 @@
 FROM ubuntu:16.04
-CMD pwd
+
 RUN apt-get update -y && \
     apt-get install -y python-pip python-dev
-CMD pwd
 # We copy just the requirements.txt first to leverage Docker cache
-COPY requirements.txt /app
+COPY /var/lib/jenkins/workspace/DockerImage/requirements.txt /app
 
 #WORKDIR /app
 
 RUN pip install -r requirements.txt
 
-COPY app.py /app
+COPY /var/lib/jenkins/workspace/DockerImage/app.py /app
 
 ENTRYPOINT [ "python" ]
 
