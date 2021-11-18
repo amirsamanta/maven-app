@@ -13,17 +13,11 @@ node{
         sh "docker login -u amirsamantaray -p bapimunasss"
         sh "docker push amirsamantaray/maven-web-application:latest"
     }
-    /*stage('Deploy as Container'){
+    stage('Deploy and Run as Container'){
        sshagent(['Docker']) {
       
-        sh "docker login -u naiduprasad -p Prasad1993"
-        
-        sh "ssh -o StrictHostKeyChecking=no ec2-user@172.31.38.94 docker rm -f webappcontainer || true"
-        
-        sh "ssh -o StrictHostKeyChecking=no ec2-user@172.31.38.94 docker run -d -p 8080:8080 --name webappcontainer naiduprasad/maven-web-application:latest"
-            
-            
-        }
-
-    }*/
+        sh "docker login -u amirsamantaray -p bapimunasss"
+        sh "docker run -d -p 8081 --name webappcontainer naiduprasad/maven-web-application:latest"
+         }
+    }
 }
