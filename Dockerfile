@@ -8,7 +8,7 @@ RUN apt-get update -y && \
 #WORKDIR /home/amirsamantaray/app
 #COPY app.py /home/amirsamantaray/app
 #RUN cd /home/amirsamantaray/app
-RUN pip install -r /home/amirsamantaray/app/requirements.txt
+#RUN pip install -r /home/amirsamantaray/app/requirements.txt
 
 ENTRYPOINT [ "python" ]
 
