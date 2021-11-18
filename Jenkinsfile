@@ -7,11 +7,13 @@ node{
         sh "${mavenHome}/bin/mvn clean package"
     }
     stage('Build Docker Image'){
-        sh "sudo docker build -t amirsamantaray/maven-web-application ."
+        sh "sudo su"
+        sh "docker build -t amirsamantaray/maven-web-application ."
     }
     stage ('Docker Login and Push'){
-        sh "sudo docker login -u amirsamantaray -p bapimunasss"
-        sh "sudo docker push amirsamantaray/maven-web-application:latest"
+        sh "sudo su"
+        sh "docker login -u amirsamantaray -p bapimunasss"
+        sh "docker push amirsamantaray/maven-web-application:latest"
     }
     /*stage('Deploy as Container'){
        sshagent(['Docker']) {
