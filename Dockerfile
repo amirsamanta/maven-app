@@ -5,7 +5,7 @@ RUN apt-get update -y && \
 # We copy just the requirements.txt first to leverage Docker cache
 COPY requirements.txt /home/amirsamantaray/app
 
-WORKDIR /home/amirsamantaray/app
+#WORKDIR /home/amirsamantaray/app
 
 RUN pip install -r requirements.txt
 
