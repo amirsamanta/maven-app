@@ -15,6 +15,6 @@ node{
     }
     stage('Deploy and Run as Container'){
         sh "docker login -u amirsamantaray -p bapimunasss"
-        sh "docker run -d -p 8081 --name webappcontainer naiduprasad/maven-web-application:latest"
+        sh "docker run -d -p 8081 --name webappcontainer amirsamantaray/maven-web-application:latest"
     }
 }
