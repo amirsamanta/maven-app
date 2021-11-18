@@ -4,15 +4,18 @@ RUN apt-get update -y && \
     apt-get install -y python-pip python-dev
 # We copy just the requirements.txt first to leverage Docker cache
 #COPY requirements.txt /home/amirsamantaray/app
+COPY app.py /opt/
+
+ENTRYPOINT FLASK_APP=/opt/app.py flask run --host=0.0.0.0 --port=8082
 
 #WORKDIR /home/amirsamantaray/app
 #COPY app.py /home/amirsamantaray/app
 #RUN cd /home/amirsamantaray/app
 #RUN pip install -r /home/amirsamantaray/app/requirements.txt
 
-ENTRYPOINT [ "python" ]
+#ENTRYPOINT [ "python" ]
 
-CMD [ "app.py" ]
+#CMD [ "app.py" ]
     
 #FROM python:3.8
 
