@@ -13,8 +13,7 @@ node{
         sh "docker login -u amirsamantaray -p bapimunasss"
         sh "docker push amirsamantaray/maven-web-application:latest"
     }
-    ##Editing Jenkins file in Github to show webhook effect
-    stage('Deploy as Container'){
+    /*stage('Deploy as Container'){
        sshagent(['Docker']) {
       
         sh "docker login -u naiduprasad -p Prasad1993"
@@ -26,5 +25,5 @@ node{
             
         }
 
-    }
+    }*/
 }
