@@ -1,10 +1,6 @@
 node{
-    def mavenHome= tool name: "maven", type: "maven"
     stage('Git Clone'){
         git url: 'https://github.com/amirsamanta/maven-app.git'
-    }
-    stage('Build'){
-        sh "${mavenHome}/bin/mvn clean package"
     }
     stage('Build Docker Image'){
         sh "docker build -t amirsamantaray/python-application ."
