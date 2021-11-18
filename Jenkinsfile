@@ -1,24 +1,24 @@
 node{
     def mavenHome= tool name: "maven", type: "maven"
     stage('Git Clone'){
-        git url: 'https://github.com/Subbu44/maven-app.git'
+        git url: 'https://github.com/amirsamanta/maven-app.git'
     }
     stage('Build'){
         sh "${mavenHome}/bin/mvn clean package"
     }
     stage('Build Docker Image'){
-        sh "docker build -t naiduprasad/maven-web-application ."
+        sh "docker build -t amirsamantaray/maven-web-application ."
     }
     stage ('Docker Login and Push'){
-        withCredentials([string(credentialsId: 'DockerPwd', variable: 'DockerPwd')]) {
-        sh "docker login -u naiduprasad -p ${DockerPwd}"
+                               {
+        sh "docker login -u amirsamantaray -p bapimunasss"
     }
 
     
-        sh "docker push naiduprasad/maven-web-application:latest"
+        sh "docker push amirsamantaray/maven-web-application:latest"
     }
     ##Editing Jenkins file in Github to show webhook effect
-    stage('Deploy as Container in Deployment Server'){
+    stage('Deploy as Container'){
        sshagent(['Docker']) {
       
         sh "docker login -u naiduprasad -p Prasad1993"
