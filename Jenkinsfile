@@ -14,10 +14,7 @@ node{
         sh "docker push amirsamantaray/maven-web-application:latest"
     }
     stage('Deploy and Run as Container'){
-       sshagent(['Docker']) {
-      
         sh "docker login -u amirsamantaray -p bapimunasss"
         sh "docker run -d -p 8081 --name webappcontainer naiduprasad/maven-web-application:latest"
-         }
     }
 }
