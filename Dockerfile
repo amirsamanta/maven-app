@@ -1,12 +1,21 @@
-FROM ubuntu:16.04
+FROM node:latest as node
+RUN mkdir -p /app
+WORKDIR /app
+COPY package*.json /app/
+RUN npm install 
+COPY . /app/
+EXPOSE 4200
+CMD ["npm", "run", "start"]
 
-RUN apt-get update -y && \
+#FROM ubuntu:16.04
+
+#RUN apt-get update -y && \
     apt-get install -y python-pip python-dev
 # We copy just the requirements.txt first to leverage Docker cache
 #COPY requirements.txt /home/amirsamantaray/app
-COPY app.py /opt/
+#COPY app.py /opt/
 
-ENTRYPOINT FLASK_APP=/opt/app.py flask run --host=0.0.0.0 --port=8082
+#ENTRYPOINT FLASK_APP=/opt/app.py flask run --host=0.0.0.0 --port=8082
 
 #WORKDIR /home/amirsamantaray/app
 #COPY app.py /home/amirsamantaray/app
