@@ -3,6 +3,7 @@ node{
         git url: 'https://github.com/amirsamanta/maven-app.git'
     }
     stage('Build Docker Image'){
+        sh "cd"
         sh "docker build -t amirsamantaray/flask-tutorial:latest ."
     }
     stage ('Docker Login and Push'){
