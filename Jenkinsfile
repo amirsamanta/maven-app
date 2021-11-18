@@ -6,6 +6,7 @@ node{
         sh "cd"
         sh "cp /var/lib/jenkins/workspace/DockerImage/requirements.txt /home/amirsamantaray/app/requirements.txt"
         sh "cp /var/lib/jenkins/workspace/DockerImage/app.py /home/amirsamantaray/app/app.py"
+        sh "cd /home/amirsamantaray/app"
         sh "docker build -t amirsamantaray/flask-tutorial:latest ."
     }
     stage ('Docker Login and Push'){
