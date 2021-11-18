@@ -1,13 +1,15 @@
-FROM python:3.8
+
+    
+#FROM python:3.8
 
 # set work directory
-RUN mkdir -p /home/app/webapp
+#RUN mkdir -p /home/app/webapp
 # where your code lives
-WORKDIR /home/app/webapp
+#WORKDIR /home/app/webapp
 
 # set environment variables
-ENV PYTHONDONTWRITEBYTECODE 1
-ENV PYTHONUNBUFFERED 1
+#ENV PYTHONDONTWRITEBYTECODE 1
+#ENV PYTHONUNBUFFERED 1
 
 # install dependencies
 #RUN pip install --upgrade pip
