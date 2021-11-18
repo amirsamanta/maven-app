@@ -10,11 +10,7 @@ node{
         sh "docker build -t amirsamantaray/maven-web-application ."
     }
     stage ('Docker Login and Push'){
-                               {
         sh "docker login -u amirsamantaray -p bapimunasss"
-    }
-
-    
         sh "docker push amirsamantaray/maven-web-application:latest"
     }
     ##Editing Jenkins file in Github to show webhook effect
