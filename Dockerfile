@@ -6,10 +6,9 @@ RUN apt-get update -y && \
 COPY requirements.txt /home/amirsamantaray/app
 
 #WORKDIR /home/amirsamantaray/app
-
-RUN pip install -r requirements.txt
-
 COPY app.py /home/amirsamantaray/app
+RUN cd /home/amirsamantaray/app
+RUN pip install -r requirements.txt
 
 ENTRYPOINT [ "python" ]
 
